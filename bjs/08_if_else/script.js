@@ -11,16 +11,6 @@ const answerField = document.getElementById('answerField');
 orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
-document.getElementById('btnRetry').addEventListener('click', function () {
-    if (gameRun == false){
-        parseInt(prompt('Минимальное знание числа для игры','0'));;
-        parseInt(prompt('Максимальное знание числа для игры','100'));
-        alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
-        orderNumber = 0;
-        answerNumber  = Math.floor((minValue + maxValue) / 2);
-    }
-})
-
 document.getElementById('btnOver').addEventListener('click', function () {
     if (gameRun){
         if (minValue === maxValue){
@@ -65,5 +55,16 @@ document.getElementById('btnLess').addEventListener('click', function () {
             orderNumberField.innerText = orderNumber;
             answerField.innerText = `Вы загадали число ${answerNumber }?`;
         }
+    }
+})
+
+document.getElementById('btnRetry').addEventListener('click', function () {
+    if (gameRun == false){
+        parseInt(prompt('Минимальное знание числа для игры','0'));;
+        parseInt(prompt('Максимальное знание числа для игры','100'));
+        alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
+        orderNumber = 0;
+        answerNumber  = Math.floor((minValue + maxValue) / 2);
+        answerField.innerText = `Вы загадали число ${answerNumber }?`;
     }
 })
