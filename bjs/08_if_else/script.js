@@ -26,7 +26,23 @@ document.getElementById('btnOver').addEventListener('click', function () {
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+            const phraseRandom = Math.round( Math.random() * 4);
+            const answerPhrase = phraseRandom; 
+            switch(answerPhrase){
+                case '0':
+                    alert (`Вы загадали число ${answerNumber }?`);
+                    break;
+                case '1':
+                    alert (`Я понял, это - число ${answerNumber }?`);
+                    break;
+                case '2':
+                    alert (`Думаю, что это - число ${answerNumber }?`);
+                    break;
+                case '3':
+                    alert (`Уверен, это - число ${answerNumber }?`);
+                    break;
+            }
+            answerField.innerText = answerPhrase;
         }
     }
 })
