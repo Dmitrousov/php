@@ -12,9 +12,13 @@ orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
 document.getElementById('btnRetry').addEventListener('click', function () {
-    minValue = 0;
-    maxValue = 100;
-    orderNumber = 0;
+    if(gamerun){
+        minValue = parseInt(prompt('Минимальное знание числа для игры','0'));;
+        maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
+        orderNumber = 0;
+        answerNumber  = Math.floor((minValue + maxValue) / 2);
+        gameRun = false;
+    }
 })
 
 document.getElementById('btnOver').addEventListener('click', function () {
