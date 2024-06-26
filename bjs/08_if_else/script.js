@@ -13,8 +13,9 @@ answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
 document.getElementById('btnRetry').addEventListener('click', function () {
     if(gamerun){
-        minValue = parseInt(prompt('Минимальное знание числа для игры','0'));;
-        maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
+        parseInt(prompt('Минимальное знание числа для игры','0'));;
+        parseInt(prompt('Максимальное знание числа для игры','100'));
+        alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
         orderNumber = 0;
         answerNumber  = Math.floor((minValue + maxValue) / 2);
         gameRun = false;
