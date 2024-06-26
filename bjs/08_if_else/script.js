@@ -49,7 +49,23 @@ document.getElementById('btnOver').addEventListener('click', function () {
 
 document.getElementById('btnEqual').addEventListener('click', function () {
     if (gameRun){
-        answerField.innerText = `Я всегда угадываю\n\u{1F60E}`
+        let phraseRandom = Math.round( Math.random() * 3);
+        let answerPhrase = phraseRandom; 
+        switch(answerPhrase){
+            case 0:
+                answerPhrase = `Я всегда угадываю\n\u{1F60E}`;
+                break;
+            case 1:
+                answerPhrase = `Я молодец\n\u{1F60E}`;
+                break;
+            case 2:
+                answerPhrase = `Это было несложно\n\u{1F60E}`;
+                break;
+            case 3:
+                answerPhrase = `Я умею читать мысли\n\u{1F60E}`;
+                break;
+        }
+        answerField.innerText = answerPhrase;
         gameRun = false;
     }
 })
