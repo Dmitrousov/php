@@ -50,7 +50,7 @@ document.getElementById('btnLess').addEventListener('click', function () {
             gameRun = false;
         } else {
             maxValue = answerNumber;
-            answerNumber  = Math.floor(maxValue - minValue);
+            answerNumber  = Math.floor((maxValue - minValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
             answerField.innerText = `Вы загадали число ${answerNumber }?`;
@@ -60,8 +60,8 @@ document.getElementById('btnLess').addEventListener('click', function () {
 
 document.getElementById('btnRetry').addEventListener('click', function () {
     if (gameRun == false){
-        parseInt(prompt('Минимальное знание числа для игры','0'));;
-        parseInt(prompt('Максимальное знание числа для игры','100'));
+        minValue = parseInt(prompt('Минимальное знание числа для игры','0'));;
+        maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
         alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
         orderNumber = 1;
         answerNumber  = Math.floor((minValue + maxValue) / 2);
