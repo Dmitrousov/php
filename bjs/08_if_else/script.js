@@ -115,5 +115,13 @@ document.getElementById('btnRetry').addEventListener('click', function () {
         answerNumber  = Math.floor((minValue + maxValue) / 2);
         answerField.innerText = `Вы загадали число ${answerNumber }?`;
         gameRun = true;
+    }else{
+        minValue = parseInt(prompt('Минимальное знание числа для игры','0'));;
+        maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
+        alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
+        orderNumber = 1;
+        answerNumber  = Math.floor((minValue + maxValue) / 2);
+        answerField.innerText = `Вы загадали число ${answerNumber }?`;
+        gameRun = true;
     }
 })
