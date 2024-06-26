@@ -4,7 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 400px;
+    height: 940px;
     background: url('./forest.jpg') bottom no-repeat;
     background-size: cover;
 }
@@ -12,4 +12,8 @@ body {
 .game-card {
     height: 100vh;
     font-family: 'Open Sans', monospace;
+}
+
+.card header {
+    color: aquamarine;
 }
