@@ -14,8 +14,8 @@ answerField.innerText = `Вы загадали число ${answerNumber }?`;
 document.getElementById('btnOver').addEventListener('click', function () {
     if (gameRun){
         if (minValue === maxValue){
-            const phraseRandom = Math.round( Math.random());
-            const answerPhrase = (phraseRandom === 1) ?
+            let phraseRandom = Math.round( Math.random());
+            let answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
                 `Я сдаюсь..\n\u{1F92F}`;
 
@@ -26,8 +26,8 @@ document.getElementById('btnOver').addEventListener('click', function () {
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            const phraseRandom = Math.round( Math.random() * 3);
-            const answerPhrase = phraseRandom; 
+            let phraseRandom = Math.round( Math.random() * 3);
+            let answerPhrase = phraseRandom; 
             switch(answerPhrase){
                 case 0:
                     answerPhrase = `Вы загадали число ${answerNumber }?`;
@@ -57,8 +57,8 @@ document.getElementById('btnEqual').addEventListener('click', function () {
 document.getElementById('btnLess').addEventListener('click', function () {
     if (gameRun){
         if (maxValue === minValue){
-            const phraseRandom = Math.round( Math.random());
-            const answerPhrase = (phraseRandom === 1) ?
+            let phraseRandom = Math.round( Math.random());
+            let answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
                 `Я сдаюсь..\n\u{1F92F}`;
 
@@ -69,7 +69,23 @@ document.getElementById('btnLess').addEventListener('click', function () {
             answerNumber  = Math.floor((maxValue - minValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+            let phraseRandom = Math.round( Math.random() * 3);
+            let answerPhrase = phraseRandom; 
+            switch(answerPhrase){
+                case 0:
+                    answerPhrase = `Вы загадали число ${answerNumber }?`;
+                    break;
+                case 1:
+                    answerPhrase = `Я понял, это - число ${answerNumber }?`;
+                    break;
+                case 2:
+                    answerPhrase = `Думаю, что это - число ${answerNumber }?`;
+                    break;
+                case 3:
+                    answerPhrase = `Уверен, это - число ${answerNumber }?`;
+                    break;
+            }
+            answerField.innerText = answerPhrase;
         }
     }
 })
