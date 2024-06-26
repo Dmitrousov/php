@@ -30,18 +30,19 @@ document.getElementById('btnOver').addEventListener('click', function () {
             const answerPhrase = phraseRandom; 
             switch(answerPhrase){
                 case 0:
-                    answerField.innerText = `Вы загадали число ${answerNumber }?`;
+                    answerPhrase = `Вы загадали число ${answerNumber }?`;
                     break;
                 case 1:
-                    answerField.innerText = `Я понял, это - число ${answerNumber }?`;
+                    answerPhrase = `Я понял, это - число ${answerNumber }?`;
                     break;
                 case 2:
-                    answerField.innerText = `Думаю, что это - число ${answerNumber }?`;
+                    answerPhrase = `Думаю, что это - число ${answerNumber }?`;
                     break;
                 case 3:
-                    answerField.innerText = `Уверен, это - число ${answerNumber }?`;
+                    answerPhrase = `Уверен, это - число ${answerNumber }?`;
                     break;
             }
+            answerField.innerText = answerPhrase;
         }
     }
 })
